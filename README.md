@@ -1,78 +1,188 @@
 # 🏥 Healthcare Patient Analysis Dashboard
 
-## Overview
-An Excel-based analytics dashboard built from a 10,000-patient dataset. It uses PivotTables, PivotCharts, and summary KPI cells to surface patient demographics, admission patterns, and treatment outcomes — all within a single workbook.
+## 📌 Overview
+
+An Excel-based healthcare analytics dashboard built using **10,000 patient records** to analyze patient demographics, admission patterns, treatment information, BMI categories, and 30-day readmissions.
+
+The dashboard uses **PivotTables, PivotCharts, Slicers, and KPI summaries** to provide an interactive view of healthcare data and support quick analysis and reporting.
 
 ---
 
-## File Structure (actual)
-The workbook `Healthcare_Patient_Analysis_Dashboard.xlsx` contains 8 sheets:
+## 🎯 Project Objectives
 
-| Sheet | Contents |
+- Analyze patient demographics
+- Monitor key healthcare KPIs
+- Understand admission patterns
+- Analyze diagnosis distribution
+- Examine BMI categories
+- Track 30-day readmissions
+- Analyze treatment costs and length of stay
+- Provide interactive filtering for stakeholders
+- Present healthcare insights through an Excel dashboard
+
+---
+
+## 📊 Dataset
+
+The project contains **10,000 patient records** with **19 columns**.
+
+### Raw Data Columns
+
+| Column | Description |
 |---|---|
-| `Dashboard` | Main visual dashboard — KPI cards and charts |
-| `KPI` | Summary KPI values (see below) |
-| `healthcare_patients` | Raw data: 10,000 patient records, 19 columns |
-| `Patients by Diagnosis` | Pivot table — patient count by diagnosis |
-| `Patients by Admission Type` | Pivot table — patient count by admission type |
-| `Gender Distribution` | Pivot table — patient count by gender |
-| `Readmission` | Pivot table — 30-day readmission counts |
-| `BMI Category` | Pivot table — patient count by BMI category |
+| `patient_age` | Age of the patient |
+| `gender` | Patient gender |
+| `bmi` | Body Mass Index |
+| `systolic_bp` | Systolic blood pressure |
+| `diastolic_bp` | Diastolic blood pressure |
+| `cholesterol_mg_dl` | Cholesterol level |
+| `fasting_blood_sugar` | Fasting blood sugar level |
+| `heart_rate_bpm` | Heart rate |
+| `previous_admissions` | Number of previous admissions |
+| `admission_type` | Elective, Emergency, or Urgent |
+| `primary_diagnosis` | Primary diagnosis category |
+| `medication_adherence` | Medication adherence level |
+| `length_of_stay_days` | Length of hospital stay |
+| `treatment_cost_usd` | Treatment cost in USD |
+| `readmission_30_days` | Whether the patient was readmitted within 30 days |
+| `Age_Group` | Derived age category |
+| `BMI_Category` | Derived BMI category |
+| `Blood Pressure Status` | Derived blood pressure category |
+| `Cost Category` | Derived treatment cost category |
 
 ---
 
-## KPIs Calculated
-- **Total Patients:** 10,000
-- **Average Age:** 64.8 years
-- **Average BMI:** 27.5
-- **Average Treatment Cost:** $14,530.79
-- **Average Length of Stay:** 7.3 days
-- **Readmission Count:** 1,202
-- **Readmission Rate:** 12.02%
+## 📑 Workbook Structure
+
+The Excel workbook contains 8 sheets:
+
+| Sheet | Description |
+|---|---|
+| `Dashboard` | Main interactive dashboard with KPI cards and charts |
+| `KPI` | Summary healthcare KPI values |
+| `healthcare_patients` | Raw patient dataset containing 10,000 records |
+| `Patients by Diagnosis` | PivotTable showing patients by diagnosis |
+| `Patients by Admission Type` | PivotTable showing patients by admission type |
+| `Gender Distribution` | PivotTable showing patient gender distribution |
+| `Readmission` | PivotTable showing 30-day readmission counts |
+| `BMI Category` | PivotTable showing patients by BMI category |
 
 ---
 
-## Raw Data Columns (`healthcare_patients` sheet)
-`patient_age`, `gender`, `bmi`, `systolic_bp`, `diastolic_bp`, `cholesterol_mg_dl`, `fasting_blood_sugar`, `heart_rate_bpm`, `previous_admissions`, `admission_type`, `primary_diagnosis`, `medication_adherence`, `length_of_stay_days`, `treatment_cost_usd`, `readmission_30_days`, plus derived fields: `Age_Group`, `BMI_Category`, `Blood Pressure Status`, `Cost Category`
+## 📈 Key Performance Indicators
+
+| KPI | Value |
+|---|---:|
+| Total Patients | 10,000 |
+| Average Age | 64.77 years |
+| Average BMI | 27.54 |
+| Average Treatment Cost | $14,530.79 |
+| Average Length of Stay | 7.29 days |
+| Readmission Count | 1,202 |
+| Readmission Rate | 12.02% |
 
 ---
 
-## Dashboard Features
-- KPI summary cards (patients, age, BMI, cost, length of stay, readmission rate)
-- Diagnosis breakdown (Cardiology, Endocrinology, Orthopedics, Respiratory)
-- Admission type breakdown (Elective, Emergency, Urgent)
+## 📊 Dashboard Features
+
+### Patient Overview
+
+- Total patient count
+- Average patient age
+- Average BMI
+- Average treatment cost
+- Average length of stay
+- 30-day readmission rate
+
+### Diagnosis Analysis
+
+The dashboard analyzes patients across:
+
+- Cardiology
+- Endocrinology
+- Orthopedics
+- Respiratory
+
+### Admission Analysis
+
+Patient admissions are categorized as:
+
+- Elective
+- Emergency
+- Urgent
+
+### Demographic Analysis
+
 - Gender distribution
-- BMI category distribution (Normal, Overweight, Obese, Underweight)
-- 30-day readmission tracking
+- Age analysis
+- BMI category analysis
+
+### Readmission Analysis
+
+Tracks whether patients were readmitted within 30 days.
+
+### Interactive Filtering
+
+The Excel dashboard uses interactive filtering to allow stakeholders to quickly explore the patient data.
 
 ---
 
-## Tools Used
+## 💡 Key Business Insights
+
+- **Cardiology** is the largest diagnosis category with **3,491 patients**.
+- **Emergency admissions** are the most common admission type with **3,925 patients**.
+- The gender distribution is nearly balanced, with **5,023 female** and **4,977 male** patients.
+- **1,202 patients** were readmitted within 30 days, resulting in a **12.02% readmission rate**.
+- **Overweight** is the largest BMI category with **3,503 patients**.
+- **Obese** patients account for **3,084 patients**.
+- Normal BMI accounts for **3,038 patients**, while **375 patients** are classified as underweight.
+- The dashboard provides a consolidated view of patient demographics, admissions, diagnoses, treatment costs, and readmissions.
+
+---
+
+## 🛠️ Tools & Technologies
+
 - Microsoft Excel
-- PivotTables & PivotCharts
-- Excel formulas (KPI aggregation)
-
-*(Note: there is no `.pbix`, SQL database, or Power Query/DAX model in this file — it's a self-contained Excel workbook, not a Power BI project.)*
-
----
-
-## Business Insights
-- Cardiology is the leading diagnosis category (3,491 of 10,000 patients)
-- Emergency admissions are the most common admission type (3,925 patients)
-- Gender split is nearly even (50.2% Female / 49.8% Male)
-- ~12% of patients are readmitted within 30 days
-- Overweight and Obese categories together make up the majority of BMI classifications
+- PivotTables
+- PivotCharts
+- Excel formulas
+- Slicers
+- KPI reporting
+- Data cleaning
+- Data categorization
 
 ---
 
-## Skills Demonstrated
-- Dashboard design in Excel
-- PivotTable & PivotChart construction
-- KPI calculation and summary reporting
-- Data cleaning and categorization (Age_Group, BMI_Category, Cost Category, etc.)
+## 🧠 Skills Demonstrated
+
+- Excel Dashboard Development
+- Data Analysis
+- Data Cleaning
+- PivotTable Analysis
+- PivotChart Development
+- KPI Reporting
+- Data Categorization
+- Healthcare Analytics
+- Interactive Dashboard Design
+- Business Intelligence
+- Data Visualization
+- Analytical Problem Solving
 
 ---
 
-## Author
-**Rakshitha S**
-Data Analyst
+## 📸 Project Preview
+
+![Healthcare Patient Analysis Dashboard](images/healthcare-dashboard.png)
+
+---
+
+## 📁 Project Structure
+
+```text
+healthcare-patient-analysis-dashboard/
+│
+├── README.md
+├── Healthcare_Patient_Analysis_Dashboard.xlsx
+│
+└── images/
+    └── healthcare-dashboard.png
